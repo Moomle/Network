@@ -4,7 +4,7 @@ from scapy.all import *
 from scapy.error import Scapy_Exception
 import httplib
 import threading, os, sys
-##ARP poison, DNS mitm #spse course##
+#ARP poison, DNS mitm #spse course##
 
 print 'Make sure you are running as root!\n'
 
